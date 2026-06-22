@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    z-index:1000;
+}
+
+.logo{
+    color:#00d4ff;
+    font-size:24px;
+    font-weight:bold;
+    animation:glow 2s infinite alternate;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    margin-left:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    transition:.4s;
+}
+
+.menu a:hover{
+    background:#00d4ff;
+    color:black;
+    border-radius:20px;
+    transform:scale(1.1);
+}
+
+.hero,
+.page{
+    min-height:100vh;
+    padding-top:120px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    background:linear-gradient(-45deg,#4facfe,#00f2fe,#00d4ff,#4facfe);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+}
+
+.hero h1,
+.page h1{
+    font-size:3rem;
+}
+
+.floating-icons{
+    margin-top:30px;
+    display:flex;
+    gap:30px;
+    font-size:50px;
+}
+
+.floating-icons i{
+    animation:float 3s ease-in-out infinite;
+}
+
+.card-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    color:#333;
+    padding:30px;
+    width:220px;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+}
+
+.contact-box{
+    background:white;
+    color:#333;
+    padding:30px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.contact-box p{
+    margin:15px 0;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 5px #00d4ff;
+    }
+    to{
+        text-shadow:0 0 20px #00d4ff;
+    }
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .menu{
+        flex-direction:column;
+        text-align:center;
+        margin-top:10px;
+    }
+
+    .menu li{
+        margin:10px 0;
+    }
+
+    .hero h1,
+    .page h1{
+        font-size:2rem;
+    }
+
+    .floating-icons{
+        font-size:35px;
+    }
+}
